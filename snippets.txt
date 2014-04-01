@@ -1,0 +1,43 @@
+	<div class="row hidden">
+		<div class="col-md-12">
+			<h1>Stats</h1>
+					<?php
+								$str=8;
+								$dex=19;
+								$con=12;
+								$int = 13;
+							?>
+							<div class="stat col-md-5">
+								<table class="table table-striped table-bordered table-condensed table-responsive">
+									<tbody>
+									<tr>
+										<td>Strength: <?php echo $str; ?></td><td>Modifier: <?php $modifier=stat_modifier($str);  if($modifier > 0){echo "+";}?><span class="modifier"><?php echo $modifier;  ?></span></td><td class="js center"><button name="<?php echo $modifier; ?>" class="statcheck btn btn-default btn-sm">Roll check</button></td>
+									
+									</tr>
+									<tr>
+										<td>Dexterity: <?php echo $dex; ?></td><td>Modifier: <?php $modifier=stat_modifier($dex);  if($modifier > 0){echo "+";}?><span class="modifier"><?php echo $modifier;  ?></span></td><td class="js center"><button name="<?php echo $modifier; ?>" class="statcheck btn btn-default btn-sm">Roll check</button></td>
+									</tr>
+									<tr>
+										<td>Constitution: <?php echo $con; ?></td><td>Modifier: <?php $modifier=stat_modifier($con);  if($modifier > 0){echo "+";}?><span class="modifier"><?php echo $modifier;  ?></span></td><td class="js center"><button name="<?php echo $modifier; ?>" class="statcheck btn btn-default btn-sm">Roll check</button>
+									</tr>
+									<tr>
+										<td>Intelligence: <?php echo $int; ?></td><td>Modifier: <?php $modifier=stat_modifier($int);  if($modifier > 0){echo "+";}?><span class="modifier"><?php echo $modifier;  ?></span></td><td class="js center"><button name="<?php echo $modifier; ?>" class="statcheck btn btn-default btn-sm">Roll check</button>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+							<div id="roll_result" class="col-md-2 padding10 js">
+								
+							</div>
+		</div>
+	</div>
+	
+	
+	function find_username_by_id($userid){
+	global $connection;
+	$safe_userid = mysqli_real_escape_string($connection, $userid);
+	$query = "SELECT username FROM users WHERE id = {$safe_userid}";
+	$userset = mysqli_query($connection, $query);
+	confirm_query($userset);
+	return $userset;
+}
