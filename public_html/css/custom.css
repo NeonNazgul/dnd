@@ -24,6 +24,31 @@
     overflow: hidden;
 }
 
+#port_popup_div{
+    position: fixed;
+    top: 5%;
+    bottom: 5%;
+    left:0;
+    right: 0;
+    padding: 10px;
+    display: none;
+    z-index: 120;
+    overflow: hidden;
+
+    
+
+}
+
+.port_popup_img{
+	max-height: 100%;
+	max-width: 100%;
+	background-color: #fff;
+	padding: 20px;
+	cursor: pointer;
+	border-radius: 4px;
+
+}
+
 .loading{
 	position: fixed;
 	top: 0;

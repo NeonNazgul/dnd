@@ -1,6 +1,13 @@
 <?php
 //Functions Include
 ob_start();
+error_reporting(E_ALL);
+
+//Set some base variables
+
+$form = false;
+$page_register = false;
+
 //Calculate the stat modifier
 function stat_modifier($base_stat){
 				$modifier=-5;
@@ -327,7 +334,12 @@ function is_loggedin(){
 }
 
 function is_admin(){
-	return $_SESSION["admin"];
+
+	if (isset($_SESSION["admin"])){
+		return $_SESSION["admin"];
+	}
+
+	
 	}
 
 function is_my_character($user_id, $character_id){

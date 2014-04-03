@@ -28,6 +28,7 @@ $(document).ready(function(){
 	$($overlay).on('click', function(){
 		$(this).hide();
 		$($modal).hide();
+		$('#port_popup_div').hide();
 
 	});
 	
@@ -86,6 +87,19 @@ $('.math').on('click', function(){
 	$(this).parent().parent().children().val($value);
 	});
 
+//Portrait modal popup
 
+$("#port_popup").on("click", function(event){
+	event.preventDefault();
+	$($overlay).show();
+	$('#port_popup_div').show();
+
+
+});
+
+$('#port_popup_div').on("click", function(){
+	$(this).hide();
+	$($overlay).hide();
+});
 	
 });

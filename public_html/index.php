@@ -1,11 +1,13 @@
 <?php require_once ('../includes/initialize.php'); ?>
 <?php include_once ('../includes/header.php'); ?>
 
+<?php include('../includes/errors.php'); ?>
+<?php include('../includes/messages.php'); ?>
+
 	<div class="row">
 		<div class="col-md-12">
 			<h1>Welcome <?php if (is_loggedin()) {echo htmlentities($_SESSION["username"]);} ?></h1>
-				<?php include('../includes/errors.php'); ?>
-				<?php include('../includes/messages.php'); ?>
+
 				
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tincidunt est at ligula sollicitudin, ac hendrerit nulla posuere.
                 Maecenas eu risus tortor. Proin dictum imperdiet dolor, vel molestie felis varius vel. Cras mollis volutpat semper. Curabitur nisl diam,

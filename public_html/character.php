@@ -49,9 +49,14 @@
 
 				$visible = (int)$character_array["visible"];
 				$player = find_user_by_id($character_array["user_id"]);
-				$user = $_SESSION["username"];
+				
+				if (isset($_SESSION["username"])){
+					$user = $_SESSION["username"];
+				} else {$user="";}
+
 				
 				if (!$visible){
+
 					if (!is_my_character($user, $player["username"])){
 						if(!is_admin($user))
 							{$_SESSION["message"] = "Character not public";
@@ -93,11 +98,12 @@
 							
 									
 								<?php 
-
-							} 
+							}   
 								else {
 								//echo "Has portrait: " . $character_array["portrait_path"];
-								echo "<img class=\"img-responsive char_portrait\" src=\"{$character_array["portrait_path"]}\" />";
+								echo "<a id=\"port_popup\" href=\"{$character_array["portrait_path"]}\"><img class=\"img-responsive char_portrait\" src=\"{$character_array["portrait_path"]}\" /></a>";
+								echo "<div id=\"port_popup_div\"><img class=\"port_popup_img\" src=\"{$character_array["portrait_path"]}\" /></div> ";
+
 								}
 							?>
 
